@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prettyMilliseconds = require("pretty-ms");
-// message.channel.send(`Uptime: ${prettyMilliseconds(client.uptime)}`)
-// 15d 11h 23m 20s
 
 
 client.on("ready", () => {
@@ -33,24 +31,8 @@ client.on("message", (message) => {
 message.channel.send("**!ping =** *Displays the Bot's ping.*");
 message.channel.send("**!help =**  *Displays the menu you are in right now.*");
 message.channel.send("**!uptime =** *Displays the bot's uptime.*");
-//message.channel.send("");
-//message.channel.send("Earthrise Bot Help Menu:");
   }
 });
-
-//client.on("message", (message) => {
-//  if (message.content.startsWith("!help")) {
-//    message.channel.send("Earthrise Industries Help Menu!ping = Displays the Bot's ping.!help = Displays the menu you // are in right now.!uptime = Displays the bot's uptime."));
-//  }
-// });
-
-// client.on("message", (message) => {
-//  if (message.content.startsWith("<:pidor:718945591362846722>")) {
-//    message.channel.send("<:pidor:718945591362846722>");
-//  }
-// });
-
-// <:pidor:718945591362846722>
 
 client.on('message', message => {
   if (message.content === '!ping') {  
