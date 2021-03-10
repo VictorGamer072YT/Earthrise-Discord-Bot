@@ -2,7 +2,7 @@
 local discordia = require('discordia')
 local client = discordia.Client()
 
-
+discordia.extensions()
 
 client:on('ready', function()
 	print('Logged in as '.. client.user.username)
