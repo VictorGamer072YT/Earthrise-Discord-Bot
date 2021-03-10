@@ -9,6 +9,14 @@ client:on('ready', function()
 end)
 
 
+--[[client:on('memberJoin', function(member)
+            if istony == yes
+            ban()
+end)
+]]
+
+
+
 -- Set's the Status
 
 
@@ -28,8 +36,6 @@ client:on('messageCreate', function(message)
 	end
 end)
 
-
--- ban command, stolen example :D
 client:on('messageCreate', function(message)
     if message.author.bot then return end
   
@@ -38,7 +44,7 @@ client:on('messageCreate', function(message)
       local member = message.mentionedUsers.first
   
       if not member then
-        message:reply('You forgot to mention someone to ban. <:whephone:818646815590187040>')
+        message:reply('It seems you forgot to mention someone to ban. <:whephone:818646815590187040>')
         return
       elseif not author:hasPermission("banMembers") then
         -- The user does not have enough permissions
@@ -50,8 +56,8 @@ client:on('messageCreate', function(message)
         member = message.guild:getMember(user.id)
         if author.highestRole.position > member.highestRole.position then
           --member:ban()
-          message:reply('[insert user here] was banned! <:wheajajahat:818644418512158723>')
-          member:ban()
+          message:reply('member ..  was banned! <:wheajajahat:818644418512158723>')
+          --member:ban()
         end
 
 
@@ -66,27 +72,10 @@ client:on('messageCreate', function(message)
 end)
 
 
-
-  client:on('messageCreate', function(message)
-
-    -- bots cant use it
-    if message.author.bot then return end
-    if message.content == '!debug' then
-    --regular plebs cant use it
-    local author = message.guild:getMember(message.author.id)
-    print('Message Author was' .. author)
-    if author ~= 496423458524102665 then
-    message.channel:send('You can\'t use that, butthead!') 
-    else
-        if author == 496423458524102665 then
-        message.channel:send('Random debug command goes here, working on megachivo, youll get 3 chivos now <:chivo:818669767043842070> <:chivo:818669767043842070> <:chivo:818669767043842070>')
-	end
-end
-end
-end)
 client:on('messageCreate', function(message)
-if message.content == '!debug2' then
-    message.channel:send('I\'m afraid you can\'t ban people... :person_shrugging:')
+if message.content == '!debug' then
+    message.channel:send('message.channel:sendMessage(string.format(memberCount))')
+    message.channel:sendMessage(string.format(memberCount))
 end
 end)
 
@@ -94,12 +83,37 @@ end)
 -- debug clipboard, useless
 -- mostly store emojis here
 
+-- for discord emojis, do paste their name here, for custom ones type the emoji in chat, then add at the start \
+-- send the message, copy what it shows there.
+
 -- <:doccursed:818668428625182810>
 -- <:chivo:818669767043842070>
 -- <:wheajajahat:818644418512158723>
 -- <:byy2:818671952985980990>
 -- <:whephone:818646815590187040>
 
+
+-- THE MEGACHIVO!
+client:on('messageCreate', function(message)
+    if message.content == '!megachivo' then
+        message.channel:send('https://i.imgur.com/dNwgehI.png')
+    end
+    end)
+-- !Megachivo
+client:on('messageCreate', function(message)
+    if message.content == '!Megachivo' then
+        message.channel:send('https://i.imgur.com/dNwgehI.png')
+    end
+    end)
+-- !MEGACHIVO
+client:on('messageCreate', function(message)
+    if message.content == '!MEGACHIVO' then
+        message.channel:send('https://i.imgur.com/dNwgehI.png')
+    end
+    end)
+
+
+    
 
 
 -- Help menu
