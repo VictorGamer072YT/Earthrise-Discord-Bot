@@ -19,6 +19,15 @@ client.on("ready", () => {
   console.log("WE HAVE A LIFTOFF!");
 });
 
+
+
+
+
+
+
+
+
+
 client.on("message", (message) => {
   if (message.content.startsWith("ping")) {
     message.channel.send("pong!");
@@ -40,6 +49,7 @@ client.on('message', message => {
   }
 });
 
+
 client.on("guildMemberAdd", (member) => {
     if (Date.now() - member.user.createdAt <= 600000) {
         member.ban({ days: 7, reason: 'New account, suspected to be tony!' })
@@ -55,4 +65,4 @@ client.on("message", (message) => {
 });
 
 
-client.login("BOT_TOKEN_HERE");
+client.login("Njk4NTg0MzQ5NjgyOTU4NDE4.XpH9YA.5gxE856qYiXICsrD_yM0_ywYftc");
