@@ -1,3 +1,4 @@
+-- The reason I wrote this bot in Lua, is because it could be possibly ported to lpp-vita :D
 local discordia = require('discordia')
 local client = discordia.Client()
 
@@ -37,11 +38,11 @@ client:on('messageCreate', function(message)
       local member = message.mentionedUsers.first
   
       if not member then
-        message:reply("You forgot to mention someone to ban, butthead. <:chivo:818669767043842070> <:chivo:818669767043842070> <:chivo:818669767043842070>")
+        message:reply('You forgot to mention someone to ban. <:whephone:818646815590187040>')
         return
       elseif not author:hasPermission("banMembers") then
         -- The user does not have enough permissions
-        message:reply("You can't ban people, are you dumb or just tony? <:chivo:818669767043842070> <:chivo:818669767043842070> <:chivo:818669767043842070>")
+        message:reply('I\'m afraid you can\'t ban people... :person_shrugging:')
         return
       end
   
@@ -49,12 +50,20 @@ client:on('messageCreate', function(message)
         member = message.guild:getMember(user.id)
         if author.highestRole.position > member.highestRole.position then
           --member:ban()
-          message:reply("Was banned! <:wheajajahat:818644418512158723>")
+          message:reply('[insert user here] was banned! <:wheajajahat:818644418512158723>')
           member:ban()
         end
+
+
+        for user in message.mentionedUsers:iter() do
+            member = message.guild:getMember(user.id)
+            if author.highestRole.position < member.highestRole.position then
+              message:reply('I\'m afraid you can\'t ban that person. <:byy2:818671952985980990>')
+            end
       end
     end
-  end)
+  end
+end)
 
 
 
@@ -75,26 +84,21 @@ client:on('messageCreate', function(message)
 end
 end
 end)
-
+client:on('messageCreate', function(message)
+if message.content == '!debug2' then
+    message.channel:send('I\'m afraid you can\'t ban people... :person_shrugging:')
+end
+end)
 
 
 -- debug clipboard, useless
+-- mostly store emojis here
+
 -- <:doccursed:818668428625182810>
 -- <:chivo:818669767043842070>
 -- <:wheajajahat:818644418512158723>
-
-
-
-
-
--- debug joke :P
-client:on('messageCreate', function(message)
-    if message.author.bot then return end
-    if message.content:sub(1, 4) == '<:doccursed:818668428625182810>' then
-	--if message.content == '<:doccursed:818668428625182810>' then
-		message.channel:send('<:doccursed:818668428625182810>')
-	end
-end)
+-- <:byy2:818671952985980990>
+-- <:whephone:818646815590187040>
 
 
 
@@ -105,17 +109,5 @@ client:on('messageCreate', function(message)
 		message.channel:send('***Anti Tony 2000 Help Menu:***\n**!help =**  Displays the menu you are in right now.\n**!ping =** Pong!.\n**!pong =** Ping!. <:doccursed:818668428625182810>\n**!uptime =** Displays the bot\'s uptime.\n**!kick =** Kick\'s a user.\n**!ban =** Ban\'s a user.')
 	end
 end)
-
-
-
---[[ 
-    Original JavaScript code, here for reference.
-message.channel.send("***Earthrise Bot Help Menu:***");
-message.channel.send("**!ping =** *Displays the Bot's ping.*");
-message.channel.send("**!help =**  *Displays the menu you are in right now.*");
-message.channel.send("**!uptime =** *Displays the bot's uptime.*");
-]]
-
-
 
 client:run('Bot Njk4NTg0MzQ5NjgyOTU4NDE4.XpH9YA.5gxE856qYiXICsrD_yM0_ywYftc')
