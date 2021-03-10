@@ -1,4 +1,3 @@
--- The reason I wrote this bot in Lua, is because it could be possibly ported to lpp-vita :D
 local discordia = require('discordia')
 local client = discordia.Client()
 
