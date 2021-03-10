@@ -7,17 +7,8 @@ client:on('ready', function()
 	print('Logged in as '.. client.user.username)
 end)
 
-
---[[client:on('memberJoin', function(member)
-            if istony == yes
-            ban()
-end)
-]]
-
-
-
--- Set's the Status
-
+--[[ client:on('memberJoin', function(member)
+end) ]]
 
 client:on('messageCreate', function(message)
     if message.author.bot then return end
@@ -25,15 +16,16 @@ client:on('messageCreate', function(message)
 		message.channel:send('Pong!')
 	end
 end)
-
-
-
 client:on('messageCreate', function(message)
     if message.author.bot then return end
 	if message.content == '!pong' then
 		message.channel:send('Ping! <:doccursed:818668428625182810>')
 	end
 end)
+
+
+
+
 
 client:on('messageCreate', function(message)
     if message.author.bot then return end
@@ -71,13 +63,13 @@ client:on('messageCreate', function(message)
 end)
 
 
-client:on('messageCreate', function(message)
+--[[ client:on('messageCreate', function(message)
 if message.content == '!debug' then
     message.channel:send('message.channel:sendMessage(string.format(memberCount))')
     message.channel:sendMessage(string.format(memberCount))
 end
 end)
-
+ ]]
 
 -- debug clipboard, useless
 -- mostly store emojis here
@@ -119,8 +111,10 @@ client:on('messageCreate', function(message)
 client:on('messageCreate', function(message)
     if message.author.bot then return end
 	if message.content == '!help' then
-		message.channel:send('***Anti Tony 2000 Help Menu:***\n**!help =**  Displays the menu you are in right now.\n**!ping =** Pong!.\n**!pong =** Ping!. <:doccursed:818668428625182810>\n**!uptime =** Displays the bot\'s uptime.\n**!kick =** Kick\'s a user.\n**!ban =** Ban\'s a user.')
-	end
+		--message.channel:send('***Anti Tony 2000 Help Menu:***\n**!help =**  Displays the menu you are in right now.\n**!ping =** Pong!.\n**!pong =** Ping!. <:doccursed:818668428625182810>\n**!uptime =** Displays the bot\'s uptime.\n**!kick =** Kick\'s a user.\n**!ban =** Ban\'s a user.\n**!megachivo =** THE ONE AND ONLY!, THE MEGACHIVO!!')
+		message.channel:send('***Anti Tony 2000 Help Menu:***\n**!help =**  Displays the menu you are in right now.\n**!ping =** Pong!.\n**!pong =** Ping!. <:doccursed:818668428625182810>\n**!ban =** Ban\'s a user.\n**!megachivo =** THE ONE AND ONLY!, THE MEGACHIVO!!')
+
+    end
 end)
 
 client:run('Bot Njk4NTg0MzQ5NjgyOTU4NDE4.XpH9YA.5gxE856qYiXICsrD_yM0_ywYftc')
