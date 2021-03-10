@@ -46,9 +46,8 @@ client:on('messageCreate', function(message)
       for user in message.mentionedUsers:iter() do
         member = message.guild:getMember(user.id)
         if author.highestRole.position > member.highestRole.position then
-          --member:ban()
-          message:reply('member ..  was banned! <:wheajajahat:818644418512158723>')
-          --member:ban()
+          message:reply('[insert member] was banned! <:wheajajahat:818644418512158723>')
+          member:ban()
         end
 
 
