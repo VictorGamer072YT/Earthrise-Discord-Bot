@@ -104,16 +104,20 @@ client:on('messageCreate', function(message)
 
 -- megakrest url https://cdn.discordapp.com/attachments/776278199306551297/820098171917172746/unknown.png
    
+-- Megakrest, for things that are incredibly krest worthy.
+-- !megakrest
 client:on('messageCreate', function(message)
     if message.content == '!megakrest' then
         message.channel:send('https://cdn.discordapp.com/attachments/776278199306551297/820098171917172746/unknown.png')
     end
     end)
+-- !Megakrest
 client:on('messageCreate', function(message)
     if message.content == '!Megakrest' then
         message.channel:send('https://cdn.discordapp.com/attachments/776278199306551297/820098171917172746/unknown.png')
     end
     end)
+--!MEGAKREST
 client:on('messageCreate', function(message)
     if message.content == '!MEGAKREST' then
         message.channel:send('https://cdn.discordapp.com/attachments/776278199306551297/820098171917172746/unknown.png')
@@ -126,7 +130,7 @@ client:on('messageCreate', function(message)
     if message.author.bot then return end
 	if message.content == '!help' then
 		--message.channel:send('***Anti Tony 2000 Help Menu:***\n**!help =**  Displays the menu you are in right now.\n**!ping =** Pong!.\n**!pong =** Ping!. <:doccursed:818668428625182810>\n**!uptime =** Displays the bot\'s uptime.\n**!kick =** Kick\'s a user.\n**!ban =** Ban\'s a user.\n**!megachivo =** THE ONE AND ONLY!, THE MEGACHIVO!!')
-		message.channel:send('***Anti Tony 2000 Help Menu:***\n**!help =**  Displays the menu you are in right now.\n**!ping =** Pong!.\n**!pong =** Ping!. <:doccursed:818668428625182810>\n**!ban =** Ban\'s a user.\n**!megachivo =** THE ONE AND ONLY!, THE MEGACHIVO!!')
+		message.channel:send('***Anti Tony 2000 Help Menu:***\n**!help =**  Displays the menu you are in right now.\n**!ping =** Pong!.\n**!pong =** Ping!. <:doccursed:818668428625182810>\n**!ban =** Ban\'s a user.\n**!megachivo =** THE ONE AND ONLY!, THE MEGACHIVO!!\n**!megakrest =** MEGAKREST, For things that are incredibly krest worthy')
 
     end
 end)
