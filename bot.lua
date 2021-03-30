@@ -102,8 +102,23 @@ client:on('messageCreate', function(message)
     end
     end)
 
-
-    
+-- megakrest url https://cdn.discordapp.com/attachments/776278199306551297/820098171917172746/unknown.png
+   
+client:on('messageCreate', function(message)
+    if message.content == '!megakrest' then
+        message.channel:send('https://cdn.discordapp.com/attachments/776278199306551297/820098171917172746/unknown.png')
+    end
+    end)
+client:on('messageCreate', function(message)
+    if message.content == '!Megakrest' then
+        message.channel:send('https://cdn.discordapp.com/attachments/776278199306551297/820098171917172746/unknown.png')
+    end
+    end)
+client:on('messageCreate', function(message)
+    if message.content == '!MEGAKREST' then
+        message.channel:send('https://cdn.discordapp.com/attachments/776278199306551297/820098171917172746/unknown.png')
+    end
+    end)
 
 
 -- Help menu
